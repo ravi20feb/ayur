@@ -1,0 +1,310 @@
+@use "../base/variable.scss" as variable;
+
+.header_section{
+    .header_inner{
+            display:  flex;
+            padding-block: 10px;
+        &::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .logo_section{
+            background-color: variable.$white;
+            width: 167px;
+            float: left;
+            .logo{
+                height: 70px;
+                img{
+                    object-fit: contain;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .right_section{
+            width: calc(100% - 145px);
+            display: flex;
+            align-items: center;
+            position: relative;
+            float: right;
+            align-content: center;
+            &::after{
+                content: "";
+                display: block;
+                clear: both;
+            }
+            &::before{
+                content: "\f0c9";
+                position: absolute;
+                right: 0;
+                display: none;
+                font-family: "Font Awesome 5 Free";
+                font-weight: 700;
+                font-size: 22px;
+                color: variable.$green;
+            }
+            .nav_link_section{
+                float: left;
+                width: calc(100% - 242px);
+                ul{
+                    display: flex;
+                    justify-content: center;    
+                    align-items: center;
+                    li{
+                        &:last-child{
+                            margin-right: 0;
+                        }
+                        margin-right:30px;
+                        display: inline-block;
+                        border-radius: 10px;
+                        border: 2px solid transparent;
+                        transition: all .3s ease;
+                        a{
+                            font-family: variable.$jose;
+                            color: variable.$bold-blue;
+                            display: inline-block;
+                            padding: 10px 14px;
+                            font-size: 18px;
+                            font-weight: 500;   
+                        }
+                        &.active,&.active:hover{
+
+                            border: 2px solid variable.$green;
+                            a{
+                                color: variable.$green;
+                            }
+
+                        }
+                        &:hover{
+                            border: 2px solid variable.$green;
+                            a{
+                                color: variable.$green;
+                            }
+                        }
+
+                    }
+                }
+                .nav_select{
+                    display: none;
+                    align-content: center;
+                }
+            }
+            .button_section{
+                float: right;
+                width: 240px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                .left_section{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    .icon_wrapper{
+                        text-align: center;
+                        margin-right: 15px;
+                        border-radius: 50%;
+                        .icon{
+                            color: variable.$green;
+                            padding: 9px 11px;
+                            font-size: 22px;
+                        }
+                    }
+                    .search{
+                        background-color: variable.$green;
+                        flex-shrink: 0;
+                        border: 1px solid transparent;
+                        transition: all .3s ease-out;
+                        .icon{
+                            color: #fff;
+                        }
+                        &:hover{
+                            background-color: variable.$white;
+                            border: 1px solid variable.$green;
+                            .icon{
+                                color: variable.$green;
+                            }
+                        }
+                    }
+                }
+                .right_area{ 
+                    padding: 4px;
+                    width: 115px;
+                    flex-shrink: 0;
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid variable.$green;
+                    border-radius: 10px;
+                    .user_icon{
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        color: variable.$green;
+                        font-size: 22px;
+                        .icon{
+                            font-size: 22px;
+                            color: variable.$green;
+                            padding: 5px;
+                        }
+                    }
+                    h5{
+                        font-size: 18px;
+                        font-family: variable.$jose;
+                        margin-bottom: 0;
+                        margin-top: 3px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px){
+
+}
+@media (min-width: 768px) and (max-width: 991px){
+    .header_section{ 
+    .header_inner{
+        .logo_section{
+            width: 145px;
+            .logo{
+                height: 55px;
+            }
+        }
+        .right_section{
+            .nav_link_section{
+                    ul{
+                        li{
+                            margin-right:10px;
+                            a{
+                                padding: 8px 10px;
+                                font-size: 16px; 
+                            }
+                        }
+                    }
+            }
+            .button_section{
+                
+                .left_section{
+                    .icon_wrapper{
+                        width: 40px;
+                        height: 40px;
+                        line-height: 40px;
+                        margin-right: 15px;
+                        .icon{
+                            
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .right_area{ 
+                    padding: 4px;
+                    .user_icon{
+                        font-size: 22px;
+                        .icon{
+                            font-size: 22px;
+                            padding: 5px;
+                        }
+                    }
+                    h5{
+                        font-size: 16px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+}
+@media (min-width: 576px) and (max-width: 767px){
+    .header_section{ 
+    .header_inner{
+        .logo_section{
+            width: 145px;
+            .logo{
+                height: 55px;
+            }
+            
+        }
+        .right_section{
+            text-align: end;
+            .nav_link_section{
+                ul{
+                    display: none;
+                }
+                .nav_select{
+                    display: block;
+                    
+                }
+            }
+            .button_section{
+                justify-content: end;
+                .left_section{
+                    .icon_wrapper{
+                        margin-right: 15px;
+                        .icon{
+                            font-size: 16px;
+                        }
+                    }
+                }
+                .right_area{ 
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+}
+@media (min-width: 361px) and (max-width: 575px){
+    .header_section{ 
+    .header_inner{
+        .logo_section{
+            width: 145px;
+            .logo{
+                height: 55px;
+            }
+        }
+        .right_section{
+            text-align: end;
+            &::before{
+                display: block;
+            }
+            .nav_link_section{
+                    display: none;  
+                }
+            }
+            .button_section{
+                display: none !important;
+            }
+        }
+    }
+}
+@media (max-width: 360px){
+    .header_section{ 
+    .header_inner{
+        .logo_section{
+            width: 145px;
+            .logo{
+                height: 55px;
+            }
+            
+        }
+        .right_section{
+            text-align: end;
+            &::before{
+                display: block;
+            }
+            .nav_link_section{
+                    display: none;  
+                }
+            }
+            .button_section{
+                display: none !important;
+            }
+        }
+    }
+}
+
+
+

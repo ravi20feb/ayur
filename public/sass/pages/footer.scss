@@ -1,0 +1,273 @@
+@use "../base/variable.scss" as variable;
+@use "../base/mixins.scss" as mixin;
+
+.footer_section{
+    background-color: variable.$second_white;
+    
+    .footer_inner{
+
+        .upper_section{
+            padding-block: 65px;
+            .left_section{
+                .footer_logo{
+                    position: relative;
+                    width: 225px;
+                    height: 110px;
+                    img{
+                        object-fit: contain;
+                    }
+                }
+                p{
+                    font-family: variable.$jose;
+                    font-size: 16px;
+                    color: variable.$bold_blue;
+                }
+            }
+            .right_section{
+                .link_list{
+                    display: flex;
+                    flex-direction: column;
+                    h3{
+                        font-family: variable.$jose;
+                        margin-bottom: 20px;
+                        font-size: 18px;
+                        font-weight: 700;
+                        line-height: 18px;
+                    }
+                    ul{
+                        &:not(.social_area){
+                            li{
+                                a{
+                                    @include mixin.border_hover(2px,-2px,variable.$bold_blue);
+                                }
+                                &:hover{
+                                    a::before{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                        &.contact{
+                            li{
+                                a{
+                                    h5{
+                                        word-break: break-all;
+                                    }
+                                }
+                            }
+                        }
+                        &.social_area{
+                            li{
+                                a{
+                                    h5{
+                                        @include mixin.border_hover(2px,-2px,variable.$bold_blue);
+                                        &:hover{
+                                            &::before{
+                                                width: 100%;
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        }
+                        li{
+                            display: block;
+                            word-break: break-all;
+                            margin-bottom: 15px;
+                            a{
+                                display: flex;
+                                width: fit-content;
+                                justify-content: center;
+                                font-size: 14px;
+                                color: variable.$bold_blue;
+                                font-family: variable.$jose;
+                                font-weight: 600;
+                                position: relative;
+                                gap: 5px;
+                                &::after{
+                                    content: "";
+                                    display: block;
+                                    clear: both;
+                                }
+                                
+                                .icon{
+                                    float: left;
+                                    color: inherit;
+                                    font-size: 21px;
+                                    margin-right: 8px;
+                                }
+                                h5{
+                                    position: relative;
+                                    display: flex;
+                                    justify-content: center;
+                                    float: right;
+                                    font-size: 14px;
+                                    color: inherit;
+                                    font-weight: 600;
+                                    
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .footer_bottom{
+            text-align: center;
+            font-family: variable.$jose;
+            font-size: 16px;
+            font-weight: 500;
+            color: variable.$bold_blue;
+        }
+    }
+
+
+
+@media(min-width:576px) and (max-width: 768px){
+    .footer_section{
+        .footer_inner{
+            .upper_section{
+                    padding-block: 30px;
+                .left_section{
+                    .footer_logo{
+                        position: relative;
+                        width: 225px;
+                        height: 110px;
+                        img{
+                            object-fit: contain;
+                        }
+                    }
+                    p{
+                        margin-bottom: 15px;
+                    }
+                }
+                .right_section{
+                    .link_list{
+                        display: flex;
+                        flex-direction: column;
+                        h3{
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                        }
+                        ul{
+                            li{
+                                
+                                margin-bottom: 10px;
+                                a{
+                                    display: flex;
+                                    gap: 5px;
+                                    
+                                    .icon{
+                                        font-size: 18px;
+                                    }
+                                    h5{
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
+@media(min-width:361px) and (max-width: 575px){
+    .footer_section{
+        .footer_inner{
+            .upper_section{
+                padding-block: 15px;
+                .left_section{
+                    margin-bottom: 20px;
+                    .footer_logo{
+                        position: relative;
+                        width: 225px;
+                        height: 110px;
+                        img{
+                            object-fit: contain;
+                        }
+                        p{
+                            margin-bottom: 15px;
+                        }
+                    }
+                }
+                .right_section{
+                    .link_list{
+                        display: flex;
+                        flex-direction: column;
+                        h3{
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                        }
+                        ul{
+                            li{
+                                
+                                margin-bottom: 10px;
+                                a{
+                                    display: flex;
+                                    gap: 5px;
+                                    .icon{
+                                        font-size: 18px;
+                                    }
+                                    h5{
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width:360px){
+    .footer_section{
+        .footer_inner{
+            .upper_section{
+                padding-block: 20px;
+                .left_section{
+                    margin-bottom: 25px;
+                    .footer_logo{
+                        position: relative;
+                        width: 225px;
+                        height: 110px;
+                        img{
+                            object-fit: contain;
+                        }
+                    }
+                }
+                .right_section{
+                    .link_list{
+                        display: flex;
+                        flex-direction: column;
+                        h3{
+                            margin-bottom: 15px;
+                            font-size: 18px;
+                        }
+                        ul{
+                            li{
+                                
+                                margin-bottom: 10px;
+                                a{
+                                    display: flex;
+                                    gap: 5px;
+                                    .icon{
+                                        font-size: 18px;
+                                    }
+                                    h5{
+                                        font-size: 14px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

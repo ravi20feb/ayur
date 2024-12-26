@@ -1,0 +1,218 @@
+@use "../base/variable.scss";
+.buy_section{
+    background-color: variable.$green;
+    padding-block: 30px;
+    position: relative;
+    
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        height: 87px;
+        width: 77px;
+        background-image: url(../../images/Vector.png);
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        bottom: 0;
+    }
+    .buynow_inner{
+        width: 830px;
+        max-width: 100%;
+        margin-inline: auto;
+        .image_section{
+            position: relative;
+            width: 100%;
+            height: 150px;
+            img{
+                object-fit: contain;
+            }
+        }
+        .text_section{
+            align-content: center;
+            height: 100%;
+            h3{
+                font-family: variable.$jose;
+                font-size: 18px;
+                font-weight: 500;
+                margin-bottom: 5px;
+                color: variable.$white;
+                margin-bottom: 10px;
+            }
+            p{
+                margin-bottom: 10px;
+                font-size: 22px;
+                font-weight: 500;
+                font-family: variable.$jose;
+                margin-bottom: 10px;
+                color: variable.$white;
+            }
+            .buy_link{
+                
+                
+                a{
+                    display: inline-block;
+                    font-family: variable.$jose;
+                    border: 1px solid variable.$white;
+                    font-size: 18px;
+                    padding: 5px 15px;
+                    font-weight: 500;
+                    color: variable.$white;
+                    border-radius: 10px;
+                    transition: all .3s ease-in;
+                    &:hover{
+                        background-color: variable.$white;
+                        color: variable.$green;
+                    
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+@media(min-width: 768px) and (max-width: 991px){
+    .buy_section{
+        padding-block: 30px;
+        &::after{
+            height: 50px;
+            width: 37px;
+        }
+        .buynow_inner{
+            .text_section{
+                p{
+                    font-size: 20px;
+                }
+                .buy_link{
+                    
+                    a{
+                        font-size: 18px;
+                        padding: 5px 12px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media(min-width: 576px) and (max-width: 767px){
+    .buy_section{
+        padding-block: 30px;
+        &::after{
+            display: none;
+        }
+        .buynow_inner{
+            .text_section{
+                p{
+                    font-size: 20px;
+                }
+                .buy_link{
+                    a{
+                        font-size: 18px;
+                        padding: 5px 12px;
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media(min-width: 361px) and (max-width: 575px){
+    .buy_section{
+        padding-block: 30px;
+        &::after{
+            display: none;
+        }
+        .buynow_inner{
+            .image_section{
+                margin-bottom: 15px;
+            }
+            .text_section{
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: start;
+                // text-align: center;
+                word-break: break-all;
+                color: variable.$black;
+                h3{
+                    margin-bottom: 5px;
+                    font-size: 18px;
+                    color: inherit;
+
+                }
+                p{
+                    font-size: 20px;
+                    line-height: 24px;
+                    color: inherit;
+                }
+                .buy_link{
+                    text-align: center;
+                    
+                    a{
+                        font-size: 18px;
+                        padding: 5px 8px;
+                        color: inherit;
+                        border: 1px solid variable.$black;
+                        &:hover{
+                            background-color: variable.$green;
+                            color: white;
+                            border-color: variable.$green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+@media(max-width: 360px){
+    .buy_section{
+        padding-block: 25px;
+        &::after{
+            display: none;
+        }
+        .buynow_inner{
+            .image_section{
+                margin-bottom: 15px;
+            }
+            .text_section{
+                background-color: #fff;
+                padding: 20px;
+                border-radius: 10px;
+                text-align: start;
+                word-break: break-all;
+                color: variable.$black;
+                h3{
+                    margin-bottom: 5px;
+                    font-size: 18px;
+                    color: inherit;
+                }
+                p{
+                    font-size: 16px;
+                    line-height: 24px;
+                    color: inherit;
+                }
+                .buy_link{
+                    text-align: center;
+                    
+                    a{
+                        font-size: 16px;
+                        padding: 5px 8px;
+                        color: inherit;
+                        border: 1px solid variable.$black;
+                        &:hover{
+                            background-color: variable.$green;
+                            color: white;
+                            border-color: variable.$green;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

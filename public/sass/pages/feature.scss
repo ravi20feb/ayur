@@ -1,0 +1,177 @@
+@use "../base/variable.scss" as variable;
+
+.feature_section{
+    .feature_inner{
+        margin-top: -30px;
+        background-color: variable.$white;
+        width: 980px;
+        max-width: 100%;
+        margin-inline: auto;
+        ul{
+            padding-block: 30px;
+            border: 1px solid variable.$light_gray; 
+            li{
+                border-right: 1px solid variable.$light_gray;
+                padding: 15px;
+                &:last-child{
+                    border-right: none;
+                }
+                width: calc(100% / 4);
+                .list_content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    .icon{
+                        margin-right: 10px;
+                        flex-shrink: 0;
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    h5{
+                        display: inline-block;
+                        max-width: 112px;
+                        font-family: variable.$jose;
+                        font-size: 18px;
+                        font-weight: 500;                      
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media(min-width: 992px) and (max-width: 1199px){
+    .feature_section{
+        .feature_inner{
+            width: 820px;
+            ul{  
+                padding-block: 15px;          
+                li{
+                    .list_content{
+                        .icon{
+                            margin-right: 10px;
+                            width: 45px;
+                            height: 45px;
+                        }
+                        h5{
+                            font-size: 16px;                   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(min-width: 768px) and (max-width: 991px){
+    .feature_section{
+        .feature_inner{
+            width: 640px;
+            ul{  
+                padding-block: 15px;          
+                li{
+                    .list_content{
+                        .icon{
+                            margin-right: 22px;
+                            width: 40px;
+                            height: 40px;
+                        }
+                        h5{
+                            font-size: 16px;                   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px){
+    .feature_section{
+        .feature_inner{
+            margin-top: 0;
+            ul{  
+                padding-block: 15px;          
+                li{
+                    padding: 10px;
+                    .list_content{
+                        .icon{
+                            margin-right: 10px;
+                            width: 40px;
+                            height: 40px;
+                        }
+                        h5{
+                            font-size: 14px;                   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media (min-width: 361px) and (max-width: 575px){
+    .feature_section{
+        .feature_inner{
+            margin-top: 0;
+            ul{  
+                padding-block: 15px;   
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px; 
+                border: none;      
+                li{
+                    &:last-child{
+                        border-right: 1px solid variable.$light_gray;
+                    }
+                    width: calc((100% - 5px) / 2);
+                    padding: 10px;
+                    border: 1px solid variable.$light_gray;
+                    .list_content{
+                        .icon{
+                            margin-right: 10px;
+                            width: 40px;
+                            height: 40px;
+                        }
+                        h5{
+                            font-size: 14px;                   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+@media(max-width: 360px){
+    .feature_section{
+        .feature_inner{
+            margin-top: 0;
+            ul{  
+                padding-block: 15px;   
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px; 
+                border: none;      
+                li{
+                    &:last-child{
+                        border-right: 1px solid variable.$light_gray;
+                    }
+                    width: calc((100% - 5px) / 2);
+                    padding: 10px;
+                    border: 1px solid variable.$light_gray;
+                    .list_content{
+                        .icon{
+                            margin-right: 10px;
+                            width: 40px;
+                            height: 40px;
+                        }
+                        h5{
+                            font-size: 14px;                   
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

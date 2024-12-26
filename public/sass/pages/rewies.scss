@@ -1,0 +1,145 @@
+@use "../base/variable.scss" as variable;
+
+.reviews_section{
+    padding-block: 80px 0 ;
+    position: relative;
+    &::after{
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+    }
+    .reviews_inner{
+        overflow-x: hidden;  
+        .row{
+            overflow-x: auto;
+            flex-wrap: nowrap;
+            
+            .review_content{
+                margin-bottom: 80px;
+                overflow-x: auto;
+                @keyframes pop {
+                    from{
+                        opacity: 0;
+                        scale: .5;
+                        // transform: translateX(-100px);
+                    }
+                    to{
+                        opacity: 1;
+                        scale: 1;
+                        // transform: translateX(0);
+                    }
+                }
+                &{
+                    animation: pop linear;
+                    animation-timeline: view();
+                    animation-range: entry 0% cover 40%;
+                }
+                .text_area{
+                    position: relative;
+                    padding: 27px 16px;
+                    font-family: variable.$jose;
+                    color: variable.$black;
+                    font-size: 14px;
+                    font-weight: 500;
+                    margin-bottom: 20px;
+                    border: 1px solid variable.$green;
+                    border-radius: 10px;
+                }
+                .review_profile{
+                    position: relative;
+                    &::before{
+                        display: inline-block;
+                        content: "";
+                        position: absolute;
+                        width: 20px;
+                        height: 20px;
+                        transform: rotate(45deg) ;
+                        background-color: variable.$white;
+                        left: 17px;
+                        top: -31px;
+                        border: 1px solid variable.$green;
+                        border-top: none;
+                        border-left: none;
+                    }
+                    &::after{
+                        content: "";
+                        display: block;
+                        clear: both;
+                    }
+                    .profile_img{
+                        float: left;
+                        position: relative;
+                        width: 43px;
+                        height: 43px;
+                        overflow: hidden;
+                        border-radius: 50%;
+                        img{
+                            object-fit: cover;
+                        }
+                    }
+                    .profile_details{
+                        width: calc(100% - 43px);
+                        padding-left: 15px;
+                        float: right;
+                        h4{
+                            font-size: 18px;
+                            font-family: variable.$jose;
+                            font-weight: 500;
+                        }
+                        ul{
+                            li{
+                                .start_icon{
+                                    color: gold;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }      
+    }
+}
+
+@media(min-width:992px) and (max-width: 1199px){
+    .reviews_section{
+        padding-block: 60px 0;
+        .reviews_inner{
+            .row{
+                .review_content{
+                    margin-bottom: 60px;
+                    overflow-x: auto;
+                }
+            }      
+        }
+    }
+}
+@media(min-width:768px) and (max-width: 991px){
+    .reviews_section{
+        padding-block: 30px 0;
+        .reviews_inner{
+            .row{
+                .review_content{
+                    margin-bottom: 30px;
+                    overflow-x: auto;
+                }
+            }      
+        }
+    }
+}
+@media (max-width: 767px){
+    .reviews_section{
+        padding-block: 25px 0;
+        .reviews_inner{
+            .row{
+                .review_content{
+                    margin-bottom: 25px;
+                    overflow-x: auto;
+                }
+            }      
+        }
+    }
+}
